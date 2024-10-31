@@ -1,0 +1,13 @@
+@import './app/modules/agendamentos/sass/core/icons';
+@import './app/modules/agendamentos/sass/core/typography';
+@import './app/modules/agendamentos/sass/abstracts/variables';
+
+* {
+    font-family: $poppins;
+    color: #ffffff;
+}
+
+body {
+    background-color: $quartenary-color;
+    margin: 0;
+}

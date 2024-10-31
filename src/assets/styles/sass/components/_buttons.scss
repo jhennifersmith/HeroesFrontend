@@ -1,0 +1,97 @@
+@import './../abstracts/variables';
+
+.submit-buttons {
+    padding-left: 1.3rem;
+
+    button {
+        padding: 1rem;
+        margin-left: 1rem;
+    }
+
+    .btn-save {
+        background-color: $secundary-color;
+
+        &:hover {
+            background-color: darken($secundary-color, 8%);
+            transition: all 0.3s ease;
+        }
+
+        &:active {
+            background-color: darken($secundary-color, 25%);
+        }
+    }
+
+    .btn-cancel {
+        background-color: $primary-color;
+
+        &:hover {
+            background-color: darken($primary-color, 8%);
+            transition: all 0.3s ease;
+        }
+
+        &:active {
+            background-color: darken($primary-color, 25%);
+        }
+    }
+
+}
+
+.search-buttons {
+    padding-left: 1.3rem;
+
+    button {
+        padding: 1rem;
+        margin-left: 1rem;
+    }
+
+    .btn-search {
+        background-color: $secundary-color;
+
+        &:hover {
+            background-color: darken($secundary-color, 8%);
+            transition: all 0.3s ease;
+        }
+
+        &:active {
+            background-color: darken($secundary-color, 25%);
+        }
+    }
+    .btn-create {
+        background-color: $quinary-color;
+
+        &:hover {
+            background-color: darken($quinary-color, 8%);
+            transition: all 0.3s ease;
+        }
+
+        &:active {
+            background-color: darken($quinary-color, 25%);
+        }
+    }
+}
+
+.btn-add {
+    background-color: $quinary-color;
+
+    &:hover {
+        background-color: darken($quinary-color, 8%);
+        transition: all 0.3s ease;
+    }
+
+    &:active {
+        background-color: darken($quinary-color, 25%);
+    }
+}
+
+.btn-delete {
+    background-color: $primary-color;
+
+    &:hover {
+        background-color: darken($primary-color, 8%);
+        transition: all 0.3s ease;
+    }
+
+    &:active {
+        background-color: darken($primary-color, 25%);
+    }
+}

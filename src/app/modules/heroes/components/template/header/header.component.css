@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: #0B132B;
+}
+.header a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+.header .logo {
+  max-height: 2rem;
+}
+.header .title-group {
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.5em;
+}
+
+/*# sourceMappingURL=header.component.css.map */
