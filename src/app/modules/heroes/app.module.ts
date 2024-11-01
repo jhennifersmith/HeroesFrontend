@@ -29,6 +29,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
 
 import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
 import { LoginComponent } from './components/login/login.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { CharacterComponent } from './components/character/character.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -39,7 +41,9 @@ export function tokenGetter() {
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    TasksComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
