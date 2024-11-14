@@ -1,9 +1,18 @@
-.card {
-  min-height: 300px;
+.container{
+  padding: 1.5rem;
 }
 
-.card-header button {
-  border: none;
-  background: none;
-  cursor: pointer;
+.task-actions {
+  display: flex;
+  align-items: center;
+}
+
+.task-actions .btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  font-size: 18px;
 }
