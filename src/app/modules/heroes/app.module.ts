@@ -31,6 +31,10 @@ import {NgxMaskDirective, NgxMaskPipe, provideNgxMask} from 'ngx-mask'
 import { LoginComponent } from './components/login/login.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { CharacterComponent } from './components/character/character.component';
+import { CreateTaskDialog } from './components/create-task-dialog/create-task-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import { RegisterComponent } from './components/register/register.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -43,7 +47,9 @@ export function tokenGetter() {
     HomeComponent,
     LoginComponent,
     TasksComponent,
-    CharacterComponent
+    CharacterComponent,
+    CreateTaskDialog,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +74,8 @@ export function tokenGetter() {
     NgxMaskDirective, NgxMaskPipe,
     HttpClientModule,
     AppRoutingModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [provideNgxMask(), { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

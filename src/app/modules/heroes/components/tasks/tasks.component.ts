@@ -3,6 +3,8 @@ import { UserTaskModel } from '../../models/user-task.model';
 import { UserTaskService } from '../../services/task.service';
 import { DurationEnum } from '../../models/duration.enum';
 import Swal from 'sweetalert2';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateTaskDialog } from '../create-task-dialog/create-task-dialog.component';
 
 @Component({
   selector: 'app-tasks',
@@ -15,8 +17,9 @@ export class TasksComponent implements OnInit {
   monthlyTasks: UserTaskModel[] = [];
   allTasks: UserTaskModel[] = [];
   DurationEnum = DurationEnum;
+  teste = '';
 
-  constructor(private taskService: UserTaskService) {}
+  constructor(private taskService: UserTaskService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadTasks();
@@ -51,8 +54,11 @@ export class TasksComponent implements OnInit {
     return '';
   }
 
-  addTask(duration: string): void {
-    // Lógica para adicionar uma nova tarefa com duração específica
+  addTask(): void {
+    const modalElement = document.getElementById('taskModal');
+    if (modalElement) {
+      modalElement.style.display = "block"
+    }
   }
 
   confirmRemoveTask(task: UserTaskModel): void {

@@ -1,4 +1,6 @@
 mat-card {
     background-color: #fff;
-    padding: 2rem;
+    padding: 1rem;
+    box-shadow: none;
+    margin-top: 0.5rem;
 }

@@ -30,6 +30,24 @@ export class AuthService {
     );
   }
 
+  register(username: string, email: string, password: string): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = { username, email, password };
+  
+    return this.http.post<any>(`${this.apiUrl}/register`, body, { headers }).pipe(
+      tap((response) => {
+        if (response.success) {
+          console.log('Usuário registrado com sucesso!');
+        }
+      }),
+      catchError((error) => {
+        console.error('Erro ao registrar usuário:', error);
+        return of({ success: false, message: 'Falha ao registrar usuário. Tente novamente.' });
+      })
+    );
+  }
+
+  
   // Armazena o token no localStorage
   private storeToken(token: string): void {
     localStorage.setItem(this.tokenKey, token);
@@ -49,4 +67,6 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem(this.tokenKey);
   }
+
+
 }

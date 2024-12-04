@@ -1,0 +1,35 @@
+<div class="modal" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="taskModalLabel">Adicionar Tarefa</h5>
+        <button type="button" (click)="onClose()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="submitTask()">
+          <div class="mb-3">
+            <label for="taskTitle" class="form-label">Título</label>
+            <input type="text" id="taskTitle" class="form-control" [(ngModel)]="task.title" name="title" required>
+          </div>
+          <div class="mb-3">
+            <label for="taskCategory" class="form-label">Categoria</label>
+            <select id="taskCategory" class="form-select" [(ngModel)]="task.category" name="category" required>
+              <option value="Study">Estudo</option>
+              <option value="Workout">Exercício</option>
+              <option value="Habit">Hábitos</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="taskDuration" class="form-label">Duração</label>
+            <select id="taskDuration" class="form-select" [(ngModel)]="task.duration" name="duration" required>
+              <option value="Day">Dia</option>
+              <option value="Week">Semana</option>
+              <option value="Month">Mês</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!task.title || !task.category || !task.duration">Salvar Tarefa</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

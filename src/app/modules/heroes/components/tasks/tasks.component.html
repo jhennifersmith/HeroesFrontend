@@ -10,7 +10,7 @@
           <!-- Títulos das Colunas (somente uma vez) -->
           <div class="row mb-3">
             <div class="col-3 text-nowrap"><strong>Título</strong></div>
-            <div class="col-3 text-nowrap"><strong>Data</strong></div>
+            <div class="col-3 text-nowrap"><strong>Data Limite</strong></div>
             <div class="col-3 text-nowrap"><strong>Completar</strong></div>
             <div class="col-3 text-nowrap"><strong>Excluir</strong></div>
           </div>
@@ -32,7 +32,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center mt-3">
-            <button class="btn btn-outline-primary" (click)="addTask('Day')">
+            <button class="btn btn-outline-primary" (click)="addTask()">
               <i class="bi bi-plus-lg"></i> Adicionar Tarefa
             </button>
           </div>
@@ -50,7 +50,7 @@
           <!-- Títulos das Colunas (somente uma vez) -->
           <div class="row mb-3">
             <div class="col-3 text-nowrap"><strong>Título</strong></div>
-            <div class="col-3 text-nowrap"><strong>Data</strong></div>
+            <div class="col-3 text-nowrap"><strong>Data Limite</strong></div>
             <div class="col-3 text-nowrap"><strong>Completar</strong></div>
             <div class="col-3 text-nowrap"><strong>Excluir</strong></div>
           </div>
@@ -72,7 +72,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center mt-3">
-            <button class="btn btn-outline-primary" (click)="addTask('Week')">
+            <button class="btn btn-outline-primary" (click)="addTask()">
               <i class="bi bi-plus-lg"></i> Adicionar Tarefa
             </button>
           </div>
@@ -90,7 +90,7 @@
           <!-- Títulos das Colunas (somente uma vez) -->
           <div class="row mb-3">
             <div class="col-3 text-nowrap"><strong>Título</strong></div>
-            <div class="col-3 text-nowrap"><strong>Data</strong></div>
+            <div class="col-3 text-nowrap"><strong>Data Limite</strong></div>
             <div class="col-3 text-nowrap"><strong>Completar</strong></div>
             <div class="col-3 text-nowrap"><strong>Excluir</strong></div>
           </div>
@@ -112,7 +112,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center mt-3">
-            <button class="btn btn-outline-primary" (click)="addTask('Month')">
+            <button class="btn btn-outline-primary" (click)="addTask()">
               <i class="bi bi-plus-lg"></i> Adicionar Tarefa
             </button>
           </div>
@@ -121,4 +121,4 @@
     </div>
   </div>
 </div>
-
+<app-create-task-dialog></app-create-task-dialog>

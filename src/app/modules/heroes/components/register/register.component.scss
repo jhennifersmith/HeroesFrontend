@@ -1,0 +1,48 @@
+@import './../../../../../assets/styles/sass/abstracts/variables';
+:root {
+    --background-color: $tertiary-color; /* Cor de fundo padrão */
+    --text-color: #212529; /* Cor do texto padrão */
+  }
+  
+  body {
+    background-color: $tertiary-color;
+    color: var(--text-color);
+  }
+  
+  .card {
+    background-color: #fff; /* Cor de fundo da caixa de login */
+    border-radius: 15px;
+  }
+  
+  .card-header {
+    background-color: $quinary-color !important; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto do cabeçalho */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  
+  h4 {
+    font-weight: bold; /* Título em negrito */
+  }
+  
+  .form-control {
+    border: 1px solid #ced4da; /* Borda padrão */
+  }
+  
+  .btn-primary {
+    background-color: $tertiary-color; /* Cor do botão de login */
+    border-color: $tertiary-color;
+  }
+  
+  .btn-primary:hover {
+    background-color: $senary-color; /* Cor do botão de login ao passar o mouse */
+  }
+  
+  .text-primary {
+    color: $tertiary-color !important; /* Cor do texto do link */
+  }
+  
+  .text-primary:hover {
+    color: $senary-color; /* Cor do texto do link ao passar o mouse */
+  }
+  
