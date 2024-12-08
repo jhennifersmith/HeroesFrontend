@@ -1,36 +1,60 @@
 .character-container {
   display: flex;
   align-items: center;
-  width: 100%; /* Para garantir que a barra ocupe a largura total */
-  padding: 20px; /* Para dar um pouco de espaçamento interno */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-  background-color: #f8f9fa; /* Cor de fundo da tela */
+  width: 100%; 
+  padding: 20px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: #f8f9fa; 
 }
 
 .character-icon {
   text-align: center;
 }
 
+.experience-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid #007bff; 
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5; 
+}
+
+.experience-label {
+  font-size: 12px; 
+  color: #007bff; 
+}
+
+.experience-text {
+  font-size: 16px; 
+  font-weight: bold;
+  color: #000; 
+}
+
 .character-attributes {
-  margin-left: 20px; /* Espaçamento entre a imagem e os atributos */
-  flex-grow: 1; /* Para que essa área ocupe o restante do espaço disponível */
+  margin-left: 20px; 
+  flex-grow: 1; 
 }
 
 .attribute-bar {
-  width: 100%; /* Para ocupar toda a largura disponível */
-  height: 25px; /* Altura das barras reduzida */
+  width: 100%;
+  height: 25px; 
   display: flex;
-  align-items: center; /* Centraliza verticalmente o texto */
-  justify-content: center; /* Centraliza horizontalmente o texto */
-  border-radius: 5px; /* Arredondamento das bordas */
-  color: white; /* Cor do texto */
-  font-weight: bold; /* Negrito */
-  margin-bottom: 8px; /* Espaçamento entre as barras */
-  position: relative; /* Para o texto ficar dentro da barra */
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 5px; 
+  color: white; 
+  font-weight: bold; 
+  margin-bottom: 8px; 
+  position: relative; 
 }
 
 .attribute-label {
-  position: absolute; /* Para centralizar o texto dentro da barra */
-  left: 50%; /* Move para o meio */
-  transform: translateX(-50%); /* Centraliza o texto */
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
 }

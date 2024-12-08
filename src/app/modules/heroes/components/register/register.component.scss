@@ -1,7 +1,7 @@
 @import './../../../../../assets/styles/sass/abstracts/variables';
 :root {
-    --background-color: $tertiary-color; /* Cor de fundo padrão */
-    --text-color: #212529; /* Cor do texto padrão */
+    --background-color: $tertiary-color; 
+    --text-color: #212529; 
   }
   
   body {
@@ -10,39 +10,39 @@
   }
   
   .card {
-    background-color: #fff; /* Cor de fundo da caixa de login */
+    background-color: #fff; 
     border-radius: 15px;
   }
   
   .card-header {
-    background-color: $quinary-color !important; /* Cor de fundo do cabeçalho */
-    color: white; /* Cor do texto do cabeçalho */
+    background-color: $quinary-color !important; 
+    color: white; 
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
   }
   
   h4 {
-    font-weight: bold; /* Título em negrito */
+    font-weight: bold; 
   }
   
   .form-control {
-    border: 1px solid #ced4da; /* Borda padrão */
+    border: 1px solid #ced4da; 
   }
   
   .btn-primary {
-    background-color: $tertiary-color; /* Cor do botão de login */
+    background-color: $tertiary-color; 
     border-color: $tertiary-color;
   }
   
   .btn-primary:hover {
-    background-color: $senary-color; /* Cor do botão de login ao passar o mouse */
+    background-color: $senary-color; 
   }
   
   .text-primary {
-    color: $tertiary-color !important; /* Cor do texto do link */
+    color: $tertiary-color !important; 
   }
   
   .text-primary:hover {
-    color: $senary-color; /* Cor do texto do link ao passar o mouse */
+    color: $senary-color; 
   }
   

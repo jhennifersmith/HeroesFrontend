@@ -19,7 +19,7 @@ export class UserTaskService {
 
   getAllUserTasks(): Observable<UserTaskModel[]> {
     return this.http.get<{ data: UserTaskModel[] }>(`${this.baseUrl}/GetAll`).pipe(
-      map(response => response.data) 
+      map(response => response.data)
     );
   }
 
@@ -31,6 +31,8 @@ export class UserTaskService {
     return this.http.put<UserTaskModel>(this.baseUrl, task);
   }
 
-  
+  completeUserTask(taskId: number): Observable<UserTaskModel> {
+    return this.http.post<UserTaskModel>(`${this.baseUrl}/complete/${taskId}`, {});
+  }
 
 }

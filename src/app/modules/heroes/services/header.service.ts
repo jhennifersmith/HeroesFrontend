@@ -9,7 +9,7 @@ export class HeaderService {
 
   private _headerData = new BehaviorSubject<HeaderData>({
     title: 'Heroes',
-    routeUrl: '/home'  
+    routeUrl: '/home'
   })
 
   constructor() { }

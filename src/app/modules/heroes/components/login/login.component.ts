@@ -10,15 +10,14 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   username: string = '';
   password: string = '';
-  hidePassword = true; // Para o controle de visibilidade da senha
-
+  hidePassword = true; 
   constructor(private authService: AuthService, private router: Router) {}
 
   onLogin(): void {
     this.authService.login(this.username, this.password).subscribe(
       (response) => {
         if (response.success) {
-          this.router.navigate(['/home']); // Redireciona após o login bem-sucedido
+          this.router.navigate(['/home']); 
         } else {
           console.error('Login failed');
         }

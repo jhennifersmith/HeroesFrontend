@@ -18,27 +18,22 @@ export class CharacterService {
 
   constructor(private http: HttpClient) { }
 
-  // Método para obter todos os personagens
   getAllCharacters(): Observable<CharacterModel[]> {
     return this.http.get<CharacterModel[]>(this.apiUrl);
   }
 
-  // Método para obter um personagem específico pelo ID
   getCharacterById(id: number): Observable<CharacterModel> {
     return this.http.get<CharacterModel>(`${this.apiUrl}/${id}`);
   }
 
-  // Método para atualizar um personagem
   updateCharacter(character: CharacterModel): Observable<CharacterModel> {
     return this.http.put<CharacterModel>(`${this.apiUrl}`, character);
   }
 
-  // Método para deletar um personagem
   deleteCharacter(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 
-  // Método para adicionar um novo personagem
   addCharacter(character: CharacterModel): Observable<CharacterModel> {
     return this.http.post<CharacterModel>(this.apiUrl, character);
   }

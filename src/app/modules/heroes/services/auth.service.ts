@@ -10,9 +10,8 @@ export class AuthService {
   private apiUrl = 'http://localhost:5160/auth'; // URL da sua API
   private tokenKey = 'authToken';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  // Método de login
   login(username: string, password: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { username, password };
@@ -33,7 +32,7 @@ export class AuthService {
   register(username: string, email: string, password: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { username, email, password };
-  
+
     return this.http.post<any>(`${this.apiUrl}/register`, body, { headers }).pipe(
       tap((response) => {
         if (response.success) {
@@ -47,26 +46,20 @@ export class AuthService {
     );
   }
 
-  
-  // Armazena o token no localStorage
+
   private storeToken(token: string): void {
     localStorage.setItem(this.tokenKey, token);
   }
 
-  // Retorna o token, se disponível
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
   }
 
-  // Método para verificar se o usuário está autenticado
   isAuthenticated(): boolean {
     return !!this.getToken();
   }
 
-  // Método para logout
   logout(): void {
     localStorage.removeItem(this.tokenKey);
   }
-
-
 }

@@ -10,7 +10,7 @@ import { CharacterService } from '../../services/character.service';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  character: CharacterModel; // Usamos um ponto de exclamação para indicar que o valor não é nulo após a inicialização
+  character: CharacterModel; 
 
   constructor(private characterService: CharacterService) {}
 
@@ -22,9 +22,9 @@ export class CharacterComponent implements OnInit {
     this.characterService.getCharacterByUser().subscribe(
       response => {
         if (response.success) {
-          this.character = response.data; // Atribui os dados recebidos
+          this.character = response.data; 
         } else {
-          console.error(response.message); // Log de erro
+          console.error(response.message); 
         }
       },
       error => {

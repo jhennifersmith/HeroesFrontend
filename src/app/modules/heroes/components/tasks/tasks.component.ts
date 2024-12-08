@@ -19,7 +19,7 @@ export class TasksComponent implements OnInit {
   DurationEnum = DurationEnum;
   teste = '';
 
-  constructor(private taskService: UserTaskService, private dialog: MatDialog) {}
+  constructor(private taskService: UserTaskService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loadTasks();
@@ -41,15 +41,15 @@ export class TasksComponent implements OnInit {
   getDueDate(task: UserTaskModel): string {
     const creationDate = new Date(task.creationDate);
     if (task.duration === 'Day') {
-      return 'Hoje'; // Para tarefas diárias, a data é "Hoje"
+      return 'Hoje';
     } else if (task.duration === 'Week') {
       const dueDate = new Date(creationDate);
-      dueDate.setDate(creationDate.getDate() + 7); // Adiciona 7 dias para tarefas semanais
-      return dueDate.toLocaleDateString('pt-BR'); // Retorna a data formatada no padrão brasileiro
+      dueDate.setDate(creationDate.getDate() + 7);
+      return dueDate.toLocaleDateString('pt-BR');
     } else if (task.duration === 'Month') {
       const dueDate = new Date(creationDate);
-      dueDate.setMonth(creationDate.getMonth() + 1); // Adiciona 1 mês para tarefas mensais
-      return dueDate.toLocaleDateString('pt-BR'); // Retorna a data formatada no padrão brasileiro
+      dueDate.setMonth(creationDate.getMonth() + 1);
+      return dueDate.toLocaleDateString('pt-BR');
     }
     return '';
   }
@@ -81,8 +81,7 @@ export class TasksComponent implements OnInit {
   }
 
   markAsComplete(task: UserTaskModel): void {
-    const updatedTask = { ...task, status: true };
-    this.taskService.updateTaskStatus(updatedTask).subscribe(() => {
+    this.taskService.completeUserTask(task.id).subscribe(() => {
       task.status = true;
       this.filterTasks();
     });
