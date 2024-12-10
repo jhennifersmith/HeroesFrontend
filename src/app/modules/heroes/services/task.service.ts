@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { map, Observable } from 'rxjs';
 import { UserTaskModel } from '../models/user-task.model';
+import { CompleteTaskResponseDto } from '../models/completeTask.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -31,8 +31,8 @@ export class UserTaskService {
     return this.http.put<UserTaskModel>(this.baseUrl, task);
   }
 
-  completeUserTask(taskId: number): Observable<UserTaskModel> {
-    return this.http.post<UserTaskModel>(`${this.baseUrl}/complete/${taskId}`, {});
+  completeUserTask(taskId: number): Observable<CompleteTaskResponseDto> {
+    return this.http.put<CompleteTaskResponseDto>(`${this.baseUrl}/complete/${taskId}`, {});
   }
 
 }

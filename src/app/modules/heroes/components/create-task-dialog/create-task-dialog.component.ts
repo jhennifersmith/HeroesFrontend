@@ -1,12 +1,7 @@
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserTaskModel } from '../../models/user-task.model'; 
-import { CategoryEnum } from '../../models/category.enum';
-import { DurationEnum } from '../../models/duration.enum';
+import { Component } from '@angular/core';
+import { UserTaskModel } from '../../models/user-task.model';
 import { UserTaskService } from '../../services/task.service';
 import Swal from 'sweetalert2';
-
 @Component({
   selector: 'app-create-task-dialog',
   templateUrl: './create-task-dialog.component.html',
@@ -21,9 +16,9 @@ export class CreateTaskDialog {
     creationDate: new Date()
   };
 
-  constructor(private taskService: UserTaskService) {}
+  constructor(private taskService: UserTaskService) { }
   submitTask(): void {
-    if (!this.task.title || !this.task.category || !this.task.duration) {
+    if (!this.task.title || !this.task.category) {
       Swal.fire({
         icon: 'error',
         title: 'Erro',
@@ -40,6 +35,7 @@ export class CreateTaskDialog {
         modalElement.style.display = "none";
       }
     });
+    this.refreshPage();
   }
 
   onClose() {
@@ -47,5 +43,21 @@ export class CreateTaskDialog {
     if (modalElement) {
       modalElement.style.display = "none";
     }
+    this.resetForm();
+    this.refreshPage();
+  }
+
+  resetForm(): void {
+    this.task = {
+      title: '',
+      category: null,
+      duration: null,
+      status: false,
+      creationDate: new Date(),
+    };
+  }
+
+  refreshPage(): void {
+    window.location.reload();
   }
 }

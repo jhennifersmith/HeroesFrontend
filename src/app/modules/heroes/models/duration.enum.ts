@@ -1,5 +1,5 @@
 export enum DurationEnum {
-    Month = "Month",
-    Week = "Week",
-    Day = "Day",
+    Mes = "Mes",
+    Semana = "Semana",
+    Dia = "Dia",
 }

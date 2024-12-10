@@ -16,7 +16,8 @@
           </div>
 
           <ul class="list-group">
-            <li *ngFor="let task of dailyTasks" class="list-group-item d-flex justify-content-between align-items-center">
+            <li *ngFor="let task of dailyTasks"
+              class="list-group-item d-flex justify-content-between align-items-center">
               <div class="col-3">{{ task.title }}</div>
               <div class="col-3">{{ getDueDate(task) }}</div>
               <div class="col-2 text-center">
@@ -32,7 +33,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center mt-3">
-            <button class="btn btn-outline-primary" (click)="addTask()">
+            <button class="btn btn-outline-primary" (click)="addTask(DurationEnum.Dia)">
               <i class="bi bi-plus-lg"></i> Adicionar Tarefa
             </button>
           </div>
@@ -56,7 +57,8 @@
           </div>
 
           <ul class="list-group">
-            <li *ngFor="let task of weeklyTasks" class="list-group-item d-flex justify-content-between align-items-center">
+            <li *ngFor="let task of weeklyTasks"
+              class="list-group-item d-flex justify-content-between align-items-center">
               <div class="col-3">{{ task.title }}</div>
               <div class="col-3">{{ getDueDate(task) }}</div>
               <div class="col-2 text-center">
@@ -72,7 +74,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center mt-3">
-            <button class="btn btn-outline-primary" (click)="addTask()">
+            <button class="btn btn-outline-primary" (click)="addTask(DurationEnum.Semana)">
               <i class="bi bi-plus-lg"></i> Adicionar Tarefa
             </button>
           </div>
@@ -96,7 +98,8 @@
           </div>
 
           <ul class="list-group">
-            <li *ngFor="let task of monthlyTasks" class="list-group-item d-flex justify-content-between align-items-center">
+            <li *ngFor="let task of monthlyTasks"
+              class="list-group-item d-flex justify-content-between align-items-center">
               <div class="col-3">{{ task.title }}</div>
               <div class="col-3">{{ getDueDate(task) }}</div>
               <div class="col-2 text-center">
@@ -112,7 +115,7 @@
             </li>
           </ul>
           <div class="d-flex justify-content-center mt-3">
-            <button class="btn btn-outline-primary" (click)="addTask()">
+            <button class="btn btn-outline-primary" (click)="addTask(DurationEnum.Mes)">
               <i class="bi bi-plus-lg"></i> Adicionar Tarefa
             </button>
           </div>
@@ -121,4 +124,40 @@
     </div>
   </div>
 </div>
-<app-create-task-dialog></app-create-task-dialog>
+
+<div class="modal" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="taskModalLabel">Adicionar Tarefa</h5>
+        <button type="button" (click)="onClose()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="submitTask()">
+          <div class="mb-3">
+            <label for="taskTitle" class="form-label">Título</label>
+            <input type="text" id="taskTitle" class="form-control" [(ngModel)]="task.title" name="title" required>
+          </div>
+          <div class="mb-3">
+            <label for="taskCategory" class="form-label">Categoria</label>
+            <select id="taskCategory" class="form-select" [(ngModel)]="task.category" name="category" required>
+              <option value="Study">Estudo</option>
+              <option value="Workout">Exercício</option>
+              <option value="Habit">Hábitos</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="taskDuration" class="form-label">Duração</label>
+            <select id="taskDuration" class="form-select" [(ngModel)]="task.duration" name="duration" [disabled]="true">
+              <option value="Dia">Dia</option>
+              <option value="Semana">Semana</option>
+              <option value="Mes">Mês</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!task.title || !task.category">Salvar
+            Tarefa</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

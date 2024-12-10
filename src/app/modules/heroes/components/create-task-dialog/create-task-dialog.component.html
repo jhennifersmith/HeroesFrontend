@@ -21,13 +21,14 @@
           </div>
           <div class="mb-3">
             <label for="taskDuration" class="form-label">Duração</label>
-            <select id="taskDuration" class="form-select" [(ngModel)]="task.duration" name="duration" required>
-              <option value="Day">Dia</option>
-              <option value="Week">Semana</option>
-              <option value="Month">Mês</option>
+            <select id="taskDuration" class="form-select" [(ngModel)]="task.duration" name="duration" [disabled]="true">
+              <option value="Dia">Dia</option>
+              <option value="Semana">Semana</option>
+              <option value="Mês">Mês</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary" [disabled]="!task.title || !task.category || !task.duration">Salvar Tarefa</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!task.title || !task.category">Salvar
+            Tarefa</button>
         </form>
       </div>
     </div>

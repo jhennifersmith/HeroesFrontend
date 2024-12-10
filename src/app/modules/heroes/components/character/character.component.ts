@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../services/auth.service'; 
-import { ActivatedRoute, Router } from '@angular/router';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CharacterModel } from '../../models/character.model';
 import { CharacterService } from '../../services/character.service';
 
@@ -10,26 +8,27 @@ import { CharacterService } from '../../services/character.service';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  character: CharacterModel; 
+  character: CharacterModel;
 
-  constructor(private characterService: CharacterService) {}
+  constructor(private characterService: CharacterService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.loadCharacter();
   }
 
   loadCharacter(): void {
-    this.characterService.getCharacterByUser().subscribe(
-      response => {
+    this.characterService.getCharacterByUser().subscribe({
+      next: (response) => {
         if (response.success) {
-          this.character = response.data; 
+          this.character = response.data;
+          this.cdr.detectChanges();
         } else {
-          console.error(response.message); 
+          console.error(response.message);
         }
       },
-      error => {
+      error: (error) => {
         console.error('Error loading character:', error);
-      }
-    );
+      },
+    });
   }
 }
