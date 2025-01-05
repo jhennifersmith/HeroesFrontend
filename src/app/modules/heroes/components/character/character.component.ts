@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CharacterModel } from '../../models/character.model';
 import { CharacterService } from '../../services/character.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-character',
@@ -10,7 +11,7 @@ import { CharacterService } from '../../services/character.service';
 export class CharacterComponent implements OnInit {
   character: CharacterModel;
 
-  constructor(private characterService: CharacterService, private cdr: ChangeDetectorRef) { }
+  constructor(private characterService: CharacterService, private cdr: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit(): void {
     this.loadCharacter();
@@ -30,5 +31,9 @@ export class CharacterComponent implements OnInit {
         console.error('Error loading character:', error);
       },
     });
+  }
+
+  goToMissions() {
+    this.router.navigate(['/missions']);
   }
 }

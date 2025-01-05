@@ -58,3 +58,37 @@
   left: 50%; 
   transform: translateX(-50%); 
 }
+
+.mission-link {
+  background-color: #ffc107; /* Cor de fundo amarela */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 10px; /* Cantos arredondados */
+  display: inline-flex; /* Usar flexbox */
+  flex-direction: column; /* Alinha o ícone acima do texto */
+  align-items: center; /* Alinha o conteúdo centralizado */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+  margin: 1rem;
+  
+  a {
+    text-decoration: none; /* Remove o sublinhado do link */
+    display: flex; /* Usar flexbox dentro do link */
+    flex-direction: column; /* Alinha ícone e texto em coluna */
+    align-items: center; /* Alinha o conteúdo ao centro */
+    color: #000; /* Cor do texto e ícone */
+    
+    mat-icon {
+      margin-bottom: 10px; /* Espaço entre o ícone e o texto */
+    }
+    
+    span {
+      font-size: 16px; /* Tamanho do texto */
+      font-weight: bold; /* Deixa o texto em negrito */
+    }
+  }
+  
+  &:hover {
+    background-color: #e0a800; /* Cor de fundo mais escura no hover */
+    cursor: pointer; /* Muda o cursor para pointer quando passar o mouse */
+  }
+}

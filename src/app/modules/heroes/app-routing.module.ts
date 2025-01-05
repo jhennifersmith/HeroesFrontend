@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from 'src/app/auth.guard';
 import { RegisterComponent } from './components/register/register.component';
+import { CombatComponent } from './components/combat/combat.component';
+import { MissionListComponent } from './components/mission/mission-list.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
-  { path: '**', redirectTo: 'login' } 
+  { path: 'combat/getmission/:missionId', component: CombatComponent},
+  { path: 'missions',component: MissionListComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

@@ -9,7 +9,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class HomeComponent implements OnInit{
 
-  constructor(private headerService: HeaderService, @Inject(DOCUMENT) public document: Document){
+  constructor(private headerService: HeaderService){
     headerService.headerData = {
       title: 'Página Inicial',
       routeUrl: ''

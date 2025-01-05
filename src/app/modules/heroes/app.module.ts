@@ -35,6 +35,8 @@ import { CreateTaskDialog } from './components/create-task-dialog/create-task-di
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { RegisterComponent } from './components/register/register.component';
+import { CombatComponent } from './components/combat/combat.component';
+import { MissionListComponent } from './components/mission/mission-list.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -49,7 +51,9 @@ export function tokenGetter() {
     TasksComponent,
     CharacterComponent,
     CreateTaskDialog,
-    RegisterComponent
+    RegisterComponent,
+    CombatComponent,
+    MissionListComponent
   ],
   imports: [
     BrowserModule,

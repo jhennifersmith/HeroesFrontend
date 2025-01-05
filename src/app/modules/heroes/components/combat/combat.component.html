@@ -1,0 +1,61 @@
+<app-character></app-character>
+<div class="container mission-container py-4 retro-theme">
+  <div class="card retro-card">
+    <div class="card-header retro-header">
+      <h1 class="m-0 text-light retro-title">Missão: {{ mission?.name }}</h1>
+    </div>
+    <div class="card-body retro-body">
+      <div class="combat-wrapper row mt-4">
+        <!-- Combat Log -->
+        <div class="col-md-6 mb-3" *ngIf="!missionComplete">
+          <div class="card retro-log">
+            <div class="card-header retro-log-header">
+              <h3 class="m-0 retro-title text-center">Histórico de Combate</h3>
+            </div>
+            <div class="card-body retro-log-body">
+              <ul class="list-group combat-log">
+                <li class="list-group-item retro-list-item" *ngFor="let log of combatLog">
+                  {{ log }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Combat Actions -->
+        <div class="col-md-6" *ngIf="!missionComplete">
+          <div class="card retro-actions">
+            <div class="card-body retro-body text-center">
+              <!-- Monstro Atual -->
+              <ng-container *ngIf="monster && !missionComplete">
+                <h4 class="retro-monster">Monstro: {{ monster.name }}</h4>
+                <p class="mb-4">Escolha sua ação:</p>
+                <div class="d-grid gap-2">
+                  <button class="btn retro-btn retro-btn-attack" (click)="performAction('attack')">
+                    Atacar
+                  </button>
+                  <button class="btn retro-btn retro-btn-magic" (click)="performAction('magic')">
+                    Ataque Mágico
+                  </button>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" *ngIf="missionComplete">
+          <div class="card retro-actions">
+            <div class="card-body retro-body text-center">
+              <!-- Missão Já Completa -->
+              <ng-container *ngIf="missionCompletedByUser">
+                <h3>Missão Completa</h3>
+                <p class="text-success retro-text-success mt-3">
+                  Você completou essa missão!
+                </p>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
